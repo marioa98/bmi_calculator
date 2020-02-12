@@ -1,10 +1,10 @@
 <h1>BMI Calculator</h1>
 <p>Sign with us and get your BMI index</p>
 
-<%= form_with scope: :user, url: '/users/create', local: true do |form| %>
+<%= form_with scope: :user, url: '/users/confirm', local: true do |form| %>
   <p>
     <%= form.label :email %>
-    <%= form.email_field :title %>
+    <%= form.email_field :email %>
   </p>
 
   <p>
@@ -17,4 +17,4 @@
   </p>
 <%end%>
 
-<%= link_to 'SignIn if you have not an account yet', '/users/signin'%>
+<%= link_to 'SignIn if you have not an account yet', signin_path%>
