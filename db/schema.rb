@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_12_020506) do
+ActiveRecord::Schema.define(version: 2020_02_12_222503) do
 
   create_table "bmi_tables", force: :cascade do |t|
     t.float "bmi_from"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_020506) do
     t.string "names"
     t.string "surnames"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

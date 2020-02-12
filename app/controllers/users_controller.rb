@@ -23,9 +23,9 @@ class UsersController < ApplicationController
 
   def confirm
   
-    @user = User.find_by("email = '#{user_params[:email]}' AND password = '#{user_params[:password]}'")
+    @user = User.find_by("email = '#{user_params[:email]}'")
 
-    if @user
+    if @user.authenticate(user_params[:password]) 
       redirect_to index_path
     else
       redirect_to '/'
