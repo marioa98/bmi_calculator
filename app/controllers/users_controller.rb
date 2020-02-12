@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def signin
+    @user = User.new
   end
 
   def showcase
@@ -14,9 +15,9 @@ class UsersController < ApplicationController
     @user.email.downcase!
 
     if @user.save
-      redirect_to '/users/showcase'
+      redirect_to '/index'
     else
-      redirect_to '/users/signin'
+      render 'signin'
     end
   end
 

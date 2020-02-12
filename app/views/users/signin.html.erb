@@ -5,6 +5,22 @@
 </p>
 
 <%= form_with scope: :user, url: '/users/create', local: true do |form|%>
+
+  <% if @user.errors.any? %>
+    <div id="errors">
+      <h2>
+        <%= pluralize(@user.errors.count, "error")%>
+        Something wrong happened from being registered:
+      </h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |msg|%>
+          <li><%= msg%></li>
+        <%end%>
+      </ul>
+    </div>
+  <%end%>
+
   <p>
     <%= form.label :names, 'Name(s):'%>
     <%= form.text_field :names %>
