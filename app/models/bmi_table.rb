@@ -1,0 +1,2 @@
+class BmiTable < ApplicationRecord
+end

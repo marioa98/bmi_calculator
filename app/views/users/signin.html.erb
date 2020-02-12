@@ -1,0 +1,43 @@
+<h1> Sign In </h1>
+
+<p>
+  Sign in with us to get your Body Mass Index (BMI) and get a history record from it. It's free
+</p>
+
+<%= form_with scope: :user, url: '/users/create', local: true do |form|%>
+  <p>
+    <%= form.label :names, 'Name(s):'%>
+    <%= form.text_field :names %>
+  </p>
+
+  <p>
+    <%= form.label :surnames, 'Surname(s):'%>
+    <%= form.text_field :surnames %>
+  </p>
+
+  <p>
+    <%= form.label :email, 'Email:'%>
+    <%= form.email_field :email %>
+  </p>
+
+  <p>
+    <%= form.label :password, 'Password:'%>
+    <%= form.password_field :password %>
+  </p>
+
+  <p>
+    <%= form.label :height, 'Actual heigh (in meters):'%>
+    <%= form.text_field :height %>
+  </p>
+
+  <p>
+    <%= form.label :weight, 'Actual weight (in kilogrames):'%>
+    <%= form.text_field :weight %>
+  </p>
+
+  <p>
+    <%= form.submit :SignIn%>
+  </p>
+<%end%>
+
+<%= link_to 'Go Back', '/'%>
