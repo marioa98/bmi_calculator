@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def login
+    @user = User.new
   end
 
   def signin
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
   
     @user = User.find_by("email = '#{user_params[:email]}'")
 
-    if @user.authenticate(user_params[:password]) 
+    if @user and  @user.authenticate(user_params[:password]) 
       redirect_to index_path
     else
       redirect_to '/'

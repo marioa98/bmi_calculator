@@ -2,6 +2,22 @@
 <p>Sign with us and get your BMI index</p>
 
 <%= form_with scope: :user, url: '/users/confirm', local: true do |form| %>
+
+  <% if @user.errors.any?%>
+    <div class="error_login">
+      <h2>
+        <%= pluralize(@user.errors.count, "error")%>
+        Something happened wrong trying to Log In.
+      </h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |msg|%>
+          <li><%= msg%></li>
+      <%end%>
+      </ul>
+    </div>
+  <%end%>
+
   <p>
     <%= form.label :email %>
     <%= form.email_field :email %>
