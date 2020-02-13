@@ -49,6 +49,9 @@ class UsersController < ApplicationController
     render 'showcase' 
   end
 
+  def default
+  end
+
   private 
   def user_params
     params.require(:user).permit(:names, :surnames, :email, :password)

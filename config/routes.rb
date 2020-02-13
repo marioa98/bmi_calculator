@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get '/index', to: 'users#showcase', as: 'index'
   get '/signin', to: 'users#signin', as: 'signin'
+  get '*missing', to: 'users#default'
 
   post '/signin', to: 'users#create'
   post 'users/confirm', to: 'users#confirm'
