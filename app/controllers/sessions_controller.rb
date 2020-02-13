@@ -19,6 +19,12 @@ class SessionsController < ApplicationController
 
   end
 
+  def destroy
+    session.delete(:user_id)
+    @user = nil
+    redirect_to '/'
+  end
+
   private 
   def user_params
     params.require(:user).permit(:names, :surnames, :email, :password)

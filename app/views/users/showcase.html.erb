@@ -1,5 +1,8 @@
 <% if logged_in? %>
   <div class="container">
+
+    <%= link_to 'Log out', '/logout', method: :delete%>
+
     <div class="center-align">
       <h2>Calculates your Body Mass Index (BMI)</h2>
       <h6> Just input your height (in meters) and your weight (in kilogrames) </h6>
