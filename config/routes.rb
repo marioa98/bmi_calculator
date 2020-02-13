@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/index', to: 'users#showcase', as: 'index'
   get '/signin', to: 'users#signin', as: 'signin'
 
-  post 'users/create', to: 'users#create'
+  post '/signin', to: 'users#create'
   post 'users/confirm', to: 'users#confirm'
   post '/index', to: 'users#calculate'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

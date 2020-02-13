@@ -1,49 +1,53 @@
-<h1> Sign In </h1>
+<div class="container">
+  <div class="center-align"> 
+    <h1> Sign Up </h1>
 
-<p>
-  Sign in with us to get your Body Mass Index (BMI) and get a history record from it. It's free
-</p>
+    <h6>
+      Sign up with us to get your Body Mass Index (BMI).
+    </h6>
+  </div>
 
-<%= form_with scope: :user, url: '/users/create', local: true do |form|%>
+  <%= form_with scope: :user, url: '/signin', local: true do |form|%>
 
-  <% if @user.errors.any? %>
-    <div id="errors">
-      <h2>
-        <%= pluralize(@user.errors.count, "error")%>
-        Something wrong happened from being registered:
-      </h2>
+    <% if @user.errors.any? %>
+      <div id="errors" class="card-panel center-align red accent-4 white-text">
+        <h6>
+          <%= pluralize(@user.errors.count, "error")%>
+          Something wrong happened from being registered:
+        </h6>
 
-      <ul>
-        <% @user.errors.full_messages.each do |msg|%>
-          <li><%= msg%></li>
-        <%end%>
-      </ul>
-    </div>
+        <ul>
+          <% @user.errors.full_messages.each do |msg|%>
+            <li><%= msg%></li>
+          <%end%>
+        </ul>
+      </div>
+    <%end%>
+
+    <p>
+      <%= form.label :names, 'Name(s):'%>
+      <%= form.text_field :names %>
+    </p>
+
+    <p>
+      <%= form.label :surnames, 'Surname(s):'%>
+      <%= form.text_field :surnames %>
+    </p>
+
+    <p>
+      <%= form.label :email, 'Email:'%>
+      <%= form.email_field :email %>
+    </p>
+
+    <p>
+      <%= form.label :password, 'Password:'%>
+      <%= form.password_field :password %>
+    </p>
+
+    <button class="btn indigo darken-4 hoverable", type="submit">
+      Sign Up
+    </button>
   <%end%>
 
-  <p>
-    <%= form.label :names, 'Name(s):'%>
-    <%= form.text_field :names %>
-  </p>
-
-  <p>
-    <%= form.label :surnames, 'Surname(s):'%>
-    <%= form.text_field :surnames %>
-  </p>
-
-  <p>
-    <%= form.label :email, 'Email:'%>
-    <%= form.email_field :email %>
-  </p>
-
-  <p>
-    <%= form.label :password, 'Password:'%>
-    <%= form.password_field :password %>
-  </p>
-
-  <p>
-    <%= form.submit :SignIn%>
-  </p>
-<%end%>
-
-<%= link_to 'Go Back', '/'%>
+  <%= link_to 'Go Back', '/'%>
+</div>

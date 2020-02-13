@@ -1,20 +1,24 @@
-<h1>Calculates your Body Mass Index (BMI)</h1>
-<p> Just input your height (in meters) and your weight (in kilogrames) </p>
+<div class="container">
+  <div class="center-align">
+    <h2>Calculates your Body Mass Index (BMI)</h2>
+    <h6> Just input your height (in meters) and your weight (in kilogrames) </h6>
+  </div>
 
-<%= form_with scope: :bmi, url: '/index' ,local: true do |form| %>
-  <p>
-  <%= form.label :height %>
-  <%= form.text_field :height %>
-  </p>
+  <%= form_with scope: :bmi, url: '/index' ,local: true do |form| %>
+    <p>
+    <%= form.label :height %>
+    <%= form.text_field :height %>
+    </p>
 
-  <p>
-  <%= form.label :weight%>
-  <%= form.text_field :weight%>
-  </p>
+    <p>
+    <%= form.label :weight%>
+    <%= form.text_field :weight%>
+    </p>
 
-  <p>
-  <%= form.submit :Calculate%>
-  </p>
-<%end%>
+    <button class="btn indigo darken-4 hoverable">
+      Calculate BMI
+    </button>
+  <%end%>
 
-<label><%= @message%></label>
+  <label class="black-text"><%= @message%></label>
+</div>
