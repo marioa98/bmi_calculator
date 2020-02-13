@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '*missing', to: 'users#default'
 
   post '/signin', to: 'users#create'
-  post 'users/confirm', to: 'users#confirm'
+  post '/login', to: 'sessions#create'
   post '/index', to: 'users#calculate'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'users#login'

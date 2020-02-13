@@ -4,10 +4,10 @@
     <h5>Sign with us and get your BMI index</h5>
   </div>
 
-  <%= form_with scope: :user, url: '/users/confirm', local: true do |form| %>
+  <%= form_with scope: :user, url: '/login', local: true do |form| %>
 
     <% if @user.errors.any?%>
-      <div class="error_login">
+      <div class="error">
         <h2>
           <%= pluralize(@user.errors.count, "error")%>
           Something happened wrong trying to Log In.

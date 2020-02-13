@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authorized, only: [:login,:signin,:create, :default]
   def login
     @user = User.new
   end
@@ -16,22 +17,13 @@ class UsersController < ApplicationController
     @user.email.downcase!
 
     if @user.save
+      session[:user_id] = @user.id
       redirect_to '/index'
     else
       render 'signin'
     end
   end
 
-  def confirm
-  
-    @user = User.find_by("email = '#{user_params[:email]}'")
-
-    if @user and  @user.authenticate(user_params[:password]) 
-      redirect_to index_path
-    else
-      redirect_to '/'
-    end
-  end
 
   def calculate
     height = bmi_params[:height].to_f
