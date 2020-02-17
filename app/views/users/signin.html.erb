@@ -7,6 +7,11 @@
     </h6>
   </div>
 
+  <div class="row">
+    <form class="col s12">
+    </form>
+  </div>
+
   <%= form_with scope: :user, url: '/signin', local: true do |form|%>
 
     <% if @user.errors.any? %>
