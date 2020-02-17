@@ -5,7 +5,6 @@ ruby '2.7.0'
 
 gem 'jquery-rails'
 gem 'jquery', '~> 0.0.1'
-gem 'material_icons'
 gem 'materialize-sass', '~> 1.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
