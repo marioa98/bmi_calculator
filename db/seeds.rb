@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-root = User.create(names: "root", email: "root@domain.com", password:"123456")
+User.create(names: "John",surnames: "Doe", email: "root@domain.com", password:"123456")
 BmiTable.create([{bmi_from: 0, bmi_to: 15, category: "Very severely underweight "}, 
     {bmi_from: 15, bmi_to:16, category:"Severely underweight"},
     {bmi_from:16, bmi_to:18.5, category:"Underweight"},
