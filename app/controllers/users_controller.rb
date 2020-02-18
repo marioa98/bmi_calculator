@@ -33,8 +33,6 @@ class UsersController < ApplicationController
     if height == 0 || weight == 0
       @message = "Please insert valid numbers"
     else
-      binding.pry
-
       bmi = (weight / height ** 2).round(1)
       category = BmiTable.where("bmi_from <= #{bmi}").order(created_at: :desc).first
       @message = "You have a BMI of #{bmi}. Category: #{category[:category]}" 
